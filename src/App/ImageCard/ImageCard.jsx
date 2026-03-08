@@ -1,12 +1,12 @@
 export default function ImageCard({
   photo: {
-    urls: { regular },
+    urls: { small },
     alt_description,
   },
 }) {
   return (
     <div>
-      <img src={regular} alt={alt_description} />
+      <img src={small} alt={alt_description} />
     </div>
   );
 }
