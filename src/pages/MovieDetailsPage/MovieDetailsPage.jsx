@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import {
   Link,
   NavLink,
@@ -55,7 +55,9 @@ export default function MovieDetailsPage() {
           </NavLink>
         </li>
       </ul>
-      <Outlet context={{ movieId: movieID }} />{" "}
+      <Suspense fallback={<div>Loading ...</div>}>
+        <Outlet context={{ movieId: movieID }} />
+      </Suspense>
     </div>
   );
 }
